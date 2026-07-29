@@ -1,0 +1,6 @@
+# Python environment setup for cryptography & telemetry take-home assessment
+# Python 3.10+ required
+
+# Optional testing & benchmarking tools
+pytest>=7.0.0
+memory-profiler>=0.60.0

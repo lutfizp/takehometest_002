@@ -1,0 +1,33 @@
+# Admin generator scripts, solutions, and keys
+scripts/
+admin/
+*.key
+*.pem
+
+# Submission working files (keep directory structure)
+submission/*
+!submission/.gitkeep
+
+# Build artifacts and binaries
+*.o
+*.out
+*.exe
+*.bin
+*.so
+*.dylib
+*.a
+
+# Python cache & environments
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# C / C++ / Rust build outputs
+build/
+target/
+
+# OS metadata
+.DS_Store
+Thumbs.db
