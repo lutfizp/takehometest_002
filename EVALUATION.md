@@ -29,8 +29,8 @@
 - **Compilation & Execution Hygiene (5 pts)**: Zero compiler warnings under strict flags (`-Wall -Wextra -Werror`), type safety, memory leak prevention.
 
 ### 3. Code Audit & Antipattern Analysis (15 Points)
-- **Root-Cause Identification (8 pts)**: Thorough breakdown of $O(N^2)$ quadratic scanning, list re-allocation overheads, and global mutations in `REFACTORING_ANALYSIS.md`.
-- **Refactoring Quality (7 pts)**: Robust, production-grade refactoring achieving significant runtime acceleration (> 100x relative speedup ratio $\frac{T_{\text{legacy}}}{T_{\text{refactored}}}$).
+- **Root-Cause Identification (8 pts)**: Thorough breakdown of quadratic scanning O(N^2), list re-allocation overheads, and global mutations in `REFACTORING_ANALYSIS.md`.
+- **Refactoring Quality (7 pts)**: Robust, production-grade refactoring achieving significant runtime acceleration (> 100x relative speedup ratio).
 
 ### 4. Git Command & Workflow Hygiene (15 Points)
 - **Branch Strategy (5 pts)**: Dedicated feature branch created following the naming convention (`solution/<candidate-name>`).

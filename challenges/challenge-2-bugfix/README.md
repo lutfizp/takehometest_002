@@ -26,7 +26,9 @@ Your objective is to conduct a code audit, identify all architectural and perfor
 ## Benchmarking & Online Testing Platform
 To ensure hardware-independent evaluation, performance is measured using the **Execution Speedup Ratio**:
 
-$$\text{Speedup Ratio} = \frac{\text{Execution Time of Legacy Code}}{\text{Execution Time of Refactored Code}}$$
+```
+Speedup Ratio = (Execution Time of Legacy Code) / (Execution Time of Refactored Code)
+```
 
 - **Target**: Achieve a **> 100x Speedup Ratio** on the same machine or platform.
 - **Online Compiler Option (No Account Required)**:
@@ -45,7 +47,7 @@ Attach a screenshot of your execution comparison as `benchmark_proof.png` inside
    - Perform a thorough code review of `legacy_processor.py`.
    - Identify every software antipattern, performance bottleneck, memory inefficiency, and design flaw.
    - Explain why each identified issue impairs execution scalability, maintainability, or code safety.
-   - Detail your refactoring strategy and document the calculated speedup ratio ($\frac{T_{\text{legacy}}}{T_{\text{refactored}}}$).
+   - Detail your refactoring strategy and document the calculated speedup ratio.
 
 2. **Refactored Implementation (`submission/challenge-2/refactored_processor.py`)**:
    - Deliver a production-grade, modular refactored script (in Python, C, C++, or Rust).

@@ -15,20 +15,27 @@ Your objective is to reverse engineer the cipher specification, write a decrypti
 - **Padding**: PKCS#7 block padding (8-byte block size).
 - **Endianness**: Big-endian word packing (`>II`).
 
-### 2. Round Function $F(R, K_i)$
-For a 32-bit right half $R$ and a 32-bit subkey $K_i$:
-$$F(R, K_i) = \text{rotate\_left32}(R, 5) \oplus K_i \oplus \text{0x5A5A5A5A}$$
+### 2. Round Function F(R, K_i)
+For a 32-bit right half `R` and a 32-bit subkey `K_i`:
 
-Where `rotate_left32(R, 5)` performs a bitwise circular left shift by 5 bits on a unsigned 32-bit integer.
+```
+F(R, K_i) = rotate_left32(R, 5) ^ K_i ^ 0x5A5A5A5A
+```
+
+Where `rotate_left32(R, 5)` performs a bitwise circular left shift by 5 bits on an unsigned 32-bit integer.
 
 ### 3. Key Schedule & LFSR
 - **Initial Seed**: `0x9E3779B9`
 - **State Size**: 32-bit unsigned integer.
 - **LFSR Tap Feedback**: Polynomial taps at bit positions 32, 31, 30, and 10.
-  $$\text{tap} = (\text{state}_{31} \oplus \text{state}_{30} \oplus \text{state}_{29} \oplus \text{state}_{9}) \ \& \ 1$$
+  ```
+  tap = ((state >> 31) ^ (state >> 30) ^ (state >> 29) ^ (state >> 9)) & 1
+  ```
 - **State Transition**:
-  $$\text{state}_{\text{next}} = ((\text{state} \ll 1) \ |\ \text{tap}) \ \& \ \text{0xFFFFFFFF}$$
-- The updated state directly serves as the 32-bit subkey $K_i$ for round $i$. The state carries over continuously across consecutive block operations.
+  ```
+  state_next = ((state << 1) | tap) & 0xFFFFFFFF
+  ```
+- The updated state directly serves as the 32-bit subkey `K_i` for round $i$. The state carries over continuously across consecutive block operations.
 
 ---
 
