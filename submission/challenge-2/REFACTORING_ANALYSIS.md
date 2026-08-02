@@ -88,11 +88,11 @@ Sebelum setiap iterasi *legacy* berjalan, *global variable*-nya di-reset agar pr
 
 | Metrik | Hasil |
 | :--- | ---: |
-| Legacy median | 9,486019 detik |
-| Legacy minimum | 8,383305 detik |
-| Refactored median | 0,018198 detik |
-| Refactored minimum | 0,016818 detik |
-| **Median Speedup** | **521,26x** |
+| Legacy median | 7.559010 detik |
+| Legacy minimum | 6.914341 detik |
+| Refactored median | 0,017343 detik |
+| Refactored minimum | 0,017209 detik |
+| **Median Speedup** | **435.85x** |
 | Target yang diminta | >100x |
 | **Status Target** | **LULUS (PASS)** |
 | **Kesamaan Output** | **LULUS (PASS)** |
